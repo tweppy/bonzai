@@ -1,7 +1,166 @@
+/* colors
+green: #52E1B6
+gray #111
+
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
 * { 
     box-sizing: border-box;
 }
 
-/* .wrapper {
+body {
+    height: 100vh;
+    width: 99vw; /* removes horizontal scrolling.. */
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
 
+h1 {
+    font-size: 5rem;
+    color: #52E1B6;
+    margin: 0;
+}
+
+h2 {
+    font-size: 2.8rem;
+    color: #fff;
+    text-shadow: 2px 2px 8px #111;
+    margin: 0.5rem;
+    text-align: center;
+}
+
+.wrapper {
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: auto;
+    grid-template-areas:
+    "header header header header header header"
+    "main main main main main main"
+    "footer footer footer footer footer footer";
+}
+
+/* HEADER */
+.top__header {
+    grid-area: header;
+    background-color: #111;
+    opacity: 70%;
+    height: 5.5rem;
+}
+
+/* NAV */
+nav { 
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+/* open old menu navs to get right code */
+/* also make so it follows u on page */
+/* make anothe rnav class to contain all nav links? */
+
+.nav__link {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1.3rem;
+    transition: 0.4s;
+}
+
+.nav__link--active { /* can't be same for ALL ? */
+    color: #52E1B6;
+}
+
+/* .nav__link:hover {
+    color: ? ;
 } */
+
+.nav__logo  {
+    height: 3.8rem;
+}
+
+.nav__logo > img {
+    height: 100%;
+}
+
+
+
+/* MAIN */
+main {
+    grid-area: main;
+}
+
+/* section */
+/* NEED TO CHNAGE BACKGROUND PICS? :( */
+section > p {
+    width: 50%;
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
+    text-shadow: 2px 2px 8px #111;
+}
+
+/* SECTION: INTRO  */
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../img/photos/09-night.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh; /* will this fuck shit? */
+    margin-top: -5.5rem;
+}
+
+/* SECTION: ECO */
+.eco__living {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../img/photos/eco-living-2-2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    opacity: 85%;
+}
+
+/* SECTION: SUSTAINABILITY */
+.sustainability {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../img/photos/eco-living.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    opacity: 90%;
+}
+
+
+/* FOOTER */
+.footer {
+    grid-area: footer;
+    background-color: #111;
+    color: #fff;
+    height: 20rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+footer > figure > img {
+    width: 5%;
+}
+
+.footer__contact {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer__contact--method {
+    color: #52E1B6;
+}
