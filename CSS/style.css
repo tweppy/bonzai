@@ -1,6 +1,7 @@
 /* colors
 green: #52E1B6
-gray #111
+dk-green: #005a3f
+gray: #111
 
 */
 
@@ -12,53 +13,66 @@ gray #111
 
 body {
     height: 100vh;
-    width: 99vw; /* removes horizontal scrolling.. */
+    width: 100vw; /* 99vw removes horizontal scrolling.. */
     margin: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 h1 {
-    font-size: 5rem;
+    font-size: 4rem;
     color: #52E1B6;
+    text-shadow: 2px 2px 8px #111;
     margin: 0;
 }
 
 h2 {
-    font-size: 2.8rem;
+    font-size: 2rem;
     color: #fff;
     text-shadow: 2px 2px 8px #111;
     margin: 0.5rem;
     text-align: center;
 }
 
+.book__button {
+    background-color: #52E1B6;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.8rem;
+    cursor: pointer;
+    transition: 0.4s;
+    color: #000;
+    font-weight: 600;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.book__button:hover {
+    background-color: #005a3f;
+    color: #fff;
+}
+
 .wrapper {
     max-width: 100%;
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: 100%;
     grid-auto-rows: auto;
     grid-template-areas:
-    "header header header header header header"
-    "main main main main main main"
-    "footer footer footer footer footer footer";
+    "header"
+    "main"
+    "footer";
 }
 
-/* HEADER */
-.top__header {
-    grid-area: header;
-    background-color: #111;
-    opacity: 70%;
-    height: 5.5rem;
+/*------------------------------------------------------------------------------------------------------------*/
+/* DESKTOP HEADER */
+/*------------------------------------------------------------------------------------------------------------*/
+.header__desktop {
+    display: none;
 }
 
-/* NAV */
-nav { 
+.nav__desktop { 
     display: flex;
+    justify-content: flex-end;
     align-items: center;
-    justify-content: space-around;
 }
-/* open old menu navs to get right code */
-/* also make so it follows u on page */
-/* make anothe rnav class to contain all nav links? */
 
 .nav__link {
     text-decoration: none;
@@ -66,101 +80,312 @@ nav {
     font-weight: 500;
     font-size: 1.3rem;
     transition: 0.4s;
+    margin: 0 2rem;
 }
 
-.nav__link--active { /* can't be same for ALL ? */
+.nav__link:hover {
     color: #52E1B6;
 }
 
-/* .nav__link:hover {
-    color: ? ;
-} */
+.nav__link--active { 
+    color: #52E1B6;
+}
 
-.nav__logo  {
+.nav__link--active:hover { 
+    color: #ffffff;
+}
+
+.nav__desktop__logo  {
     height: 3.8rem;
-}
-
-.nav__logo > img {
-    height: 100%;
+    margin: 0.8rem auto 0.8rem 2rem;
 }
 
 
+/*------------------------------------------------------------------------------------------------------------*/
+/* HEADER & NAV MOBILE */
+/*------------------------------------------------------------------------------------------------------------*/
+.header__mobile {
+    grid-area: header;
+    display: flex;
+    justify-content: flex-end;
+    margin: 2.5rem 2rem 1rem 0;
+}
 
+.nav__mobile__bars {
+    cursor: pointer;
+    width: 1.5rem;
+}
+
+/* The container <nav> - needed to position the dropdown content */
+.nav__mobile {
+    position: relative;
+    display: inline-block;
+}
+  
+/* Dropdown Content */
+.nav__mobile__dropdown {
+    display: none;
+    position: absolute;
+    background-color: #dddddd;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px #00000033;
+    z-index: 1;
+    right: 0;
+}
+
+.nav__mobile__dropdown a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+  
+.nav__mobile__dropdown a:hover {
+    background-color: #fff;
+}
+/* Show the dropdown menu on hover */
+.nav__mobile:hover .nav__mobile__dropdown {
+    display: block;
+}
+
+
+
+
+
+
+
+/*------------------------------------------------------------------------------------------------------------*/
 /* MAIN */
+/*------------------------------------------------------------------------------------------------------------*/
 main {
     grid-area: main;
 }
 
-/* section */
-/* NEED TO CHNAGE BACKGROUND PICS? :( */
-section > p {
-    width: 50%;
+/*------------------------------------------------------------------------------------------------------------*/
+/* SECTIONS */
+/*------------------------------------------------------------------------------------------------------------*/
+/* SECTIONS GENERAL STYLE */
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.section__text {
+    width: 70%;
     text-align: center;
     color: #fff;
-    font-size: 24px;
+    font-size: 1.1rem;
     text-shadow: 2px 2px 8px #111;
 }
 
-/* SECTION: INTRO  */
-.intro {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-image: url("../img/photos/09-night.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh; /* will this fuck shit? */
+/* INDEX: SECTION INTRO */
+.section__intro {
+    background-image: url("../img/photos/09-night_3.jpg");
     margin-top: -5.5rem;
+    height: 100vh; /* will this fuck shit? */
 }
 
-/* SECTION: ECO */
-.eco__living {
+/* INDEX: SECTION ECO */
+.section__eco {
+    background-image: url("../img/photos/woods-2.jpg");
+    opacity: 93%;
+    height: 100vh;
+}
+
+/* INDEX: SECTION SUSTAINABILITY */
+.section__sustainability {
+    background-image: url("../img/photos/eco-living_2.jpg");
+    opacity: 93%;
+    height: 100vh;
+}
+
+/* ABOUT: SECTION ABOUT */
+.section__about {
+    background-image: url("../img/photos/mountains-2.jpg");
+    margin-top: -5.5rem;
+    height: 100vh;
+}
+
+/* ABOUT: SECTION ROOMS */
+.section__rooms {
+    background-color: #111;
+    color: #fff;
+    display: grid;
+    grid-template-columns: 100%;
+}
+
+/*OFFERSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS */
+.offers__sample {
+    background-image: url("../img/photos/woods-2.jpg");
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.offers__textbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section__rooms {
+    width: 100%;
+}
+
+.section__rooms > img {
+    width: 100%;
+}
+
+.rooms__textbox {
+    background-color: #111;
+    color: #fff;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    background-image: url("../img/photos/eco-living-2-2.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-    opacity: 85%;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-/* SECTION: SUSTAINABILITY */
-.sustainability {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-image: url("../img/photos/eco-living.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-    opacity: 90%;
+.rooms__textbox__text {
+    width: 50%;
+    text-align: center;
 }
 
+/* SECTION: BOOKING */ /*remova flex or do new idk */
+.section__booking {
+    background-image: url("../img/photos/mountains-2.jpg");
+    margin-top: -5.5rem;
+    height: 100vh;
+}
 
+/*------------------------------------------------------------------------------------------------------------*/
 /* FOOTER */
+/*------------------------------------------------------------------------------------------------------------*/
 .footer {
     grid-area: footer;
     background-color: #111;
     color: #fff;
-    height: 20rem;
+    height: 45rem;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-around;
 }
 
-footer > figure > img {
-    width: 5%;
+.footer__icon {
+    width: 6rem;
+    margin: 1rem;
+}
+
+.footer__links {
+    display: flex;
+    flex-direction: column;
+    width: 12rem;
+    margin: 1rem;
+}
+
+.footer__links > a {
+    text-decoration: none;
+    color: #fff;
+    line-height: 1.7rem;
 }
 
 .footer__contact {
     display: flex;
     flex-direction: column;
+    width: 12rem;
+    margin: 1rem;
 }
 
-.footer__contact--method {
+.footer__contact > p {
+    margin: 0.4rem 0;
+}
+
+
+.footer__contact--method,
+.footer__links--headline {
     color: #52E1B6;
+    font-weight: 600;
+    margin: 0.5rem 0;
+}
+
+.footer__socials {
+    background-color: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3.5rem;
+}
+
+.footer__socials > a {
+    margin: 0.5rem;
+}
+
+/*------------------------------------------------------------------------------------------------------------*/
+/* MEDIA QUERIES */
+/*------------------------------------------------------------------------------------------------------------*/
+
+@media screen and (min-width: 768px) {
+    .footer {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
+        height: 22rem;
+        padding-top: 3rem;
+    }
+
+    .footer__icon {
+        width: 10rem;
+    }
+}
+
+
+@media screen and (min-width: 1000px) {
+
+    .wrapper {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-auto-rows: auto;
+        grid-template-areas:
+        "header header header header header header"
+        "main main main main main main"
+        "footer footer footer footer footer footer";
+    }
+
+    h1 {
+        font-size: 5rem;
+    }
+
+    h2 {
+        font-size: 2.8rem;
+    }
+
+    .section__text {
+        font-size: 1.5rem;
+        width: 50%;
+    }
+
+    .header__mobile {
+        display: none;
+    }
+
+    .header__desktop {
+        grid-area: header;
+        display: block;
+        background-color: #111;
+        opacity: 70%;
+        height: 5.5rem;
+    }
+   
+    .section__rooms {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
 }

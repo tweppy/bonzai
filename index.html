@@ -12,18 +12,26 @@
     <!-- SITE WRAPPER -->
     <div class="wrapper">
 
-        <!-- HEADER -->
-        <header class="top__header">
-            <!-- NAV -->
-            <nav class="nav">
-                <figure class="nav__logo">
-                    <img src="img/logo/bonz.ai-logo-color-symbol.png" alt="bonz.ai logo">
-                </figure>
-                
+        <!-- HEADER DESKTOP -->
+        <header class="header__desktop">
+            <nav class="nav__desktop">
+                <img class="nav__desktop__logo" src="img/logo/bonz.ai-logo-color-symbol.png" alt="bonz.ai logo">
+
                 <a href="index.html" class="nav__link nav__link--active">Home</a>
                 <a href="about.html" class="nav__link">About</a>
                 <a href="booking.html" class="nav__link">Book</a>
-                <a href="#" class="nav__link">Lorem Ipsum</a>
+            </nav>
+        </header>
+
+        <!-- HEADER MOBILE-->
+        <header class="header__mobile">
+            <nav class="nav__mobile">
+                <img class="nav__mobile__bars" src="img/icons/bars.svg" alt="">
+                <div class="nav__mobile__dropdown">
+                    <a href="index.html" class="nav__link nav__link--active">Home</a>
+                    <a href="about.html" class="nav__link">About</a>
+                    <a href="booking.html" class="nav__link">Book</a>
+                </div>
             </nav>
         </header>
 
@@ -31,52 +39,71 @@
         <main>
 
             <!-- SECTION: INTRO -->
-            <section class="intro">
+            <section class="section__intro">
                 <h1>bonz.ai</h1>
                 <h2>AI driven eco living</h2>
             </section>
 
             <!-- SECTION: ECO LIVING -->
-            <section class="eco__living">
-                <h2>What is AI driven eco living?</h2>
-                <p class="eco__living__text">
+            <section class="section__eco">
+                <h2>AI driven eco living?</h2>
+                <p class="section__text">
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor qui porro veniam voluptatum, in, dignissimos assumenda ullam sequi perspiciatis, non quos pariatur incidunt! Adipisci quis dolorum iusto, nihil similique eveniet!
                 </p>
             </section>
 
             <!-- SECTION: SUSTAINABILITY -->
-            <section class="sustainability">
+            <section class="section__sustainability">
                 <h2>Good for the planet</h2>
-                <p class="sustainability__text">
+                <p class="section__text">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, aspernatur!
                 </p>
-                <button class="book">BOOK NOW</button>
+        
+                <form action="booking.html">
+                    <button class="book__button" type="submit">BOOK NOW</button>
+                 </form>
+
             </section>
 
              <!-- FOOTER -->
             <footer class="footer">
-                <figure class="footer__logo">
-                    <img src="img/logo/bonz.ai-logo-color-portrait-full.png" alt="bonz.ai logo">
-                </figure>
 
-                <h3>contact:</h3>
+                <img class="footer__icon" src="img/logo/bonz.ai-logo-color-portrait-full.png" alt="bonz.ai logo">
 
-                <p class="footer__contact">
-                    <span class="footer__contact--method">call:</span>
-                    312-555-1875
-                </p>
-                <p class="footer__contact">
-                    <span class="footer__contact--method">e-mail:</span>
-                    info@bonzai.com
-                </p>
-                <p class="footer__contact">
-                    <span class="footer__contact--method">address:</span>
-                    888 Kosmos Ave
-                    <br>
-                    Kwangya
-                </p>
+                <article class="footer__links">
+                    <p class="footer__links--headline">Greener Earth</p>
+                    <a href="#">Environmental Impact</a>
+                    <a href="#">Our Journey</a>
+                    <a href="#">Our Goals</a>
+                </article>
+
+                <article class="footer__links">
+                    <p class="footer__links--headline">Booking</p>
+                    <a href="#">Payment Options</a>
+                    <a href="#">Cancel or change booking</a>
+                    <a href="#">FAQ</a>
+                </article>
+
+                <article class="footer__contact">
+                    
+                    <span class="footer__contact--method">Call:</span>
+                    <p>312-555-1875</p>
+                        
+                    <span class="footer__contact--method">E-mail:</span>
+                    <p>info@bonzai.com</p>
+                    
+                    <span class="footer__contact--method">Address:</span>
+                    <p>888 Kosmos Ave<br>Kwangya</p>
+                </article>
 
             </footer>
+
+            <footer class="footer__socials">
+                <a href="#"><img src="img/icons/logo-facebook.svg" alt="facebook icon"></a>
+                <a href="#"><img src="img/icons/logo-instagram.svg" alt="instagram icon"></a>
+                <a href="#"><img src="img/icons/logo-twitter.svg" alt="twitter icon"></a>
+                
+        </footer>
 
         </main>
 
