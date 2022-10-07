@@ -1,11 +1,9 @@
-/* colors
-green: #52E1B6
-dk-green: #005a3f
-gray: #111
-
-*/
-
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sofia&display=swap');
+
+/*------------------------------------------------------------------------------------------------------------*/
+/* GENERAL STYLES */
+/*------------------------------------------------------------------------------------------------------------*/
 
 * { 
     box-sizing: border-box;
@@ -13,16 +11,19 @@ gray: #111
 
 body {
     height: 100vh;
-    width: 100vw; /* 99vw removes horizontal scrolling.. */
+    width: 100vw;
+    max-width: 100%;
     margin: 0;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 h1 {
     font-size: 4rem;
-    color: #52E1B6;
+    color: #fff;
     text-shadow: 2px 2px 8px #111;
-    margin: 0;
+    margin: 0 auto;
+    font-family: 'Sofia', cursive;
+    text-align: center;
 }
 
 h2 {
@@ -33,7 +34,29 @@ h2 {
     text-align: center;
 }
 
-.book__button {
+h3 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+h4 {
+    color: #52E1B6;
+    font-weight: 600;
+    margin: 0.5rem 0;
+}
+
+
+/*------------------------------------------------------------------------------------------------------------*/
+/* UTILITIES */
+/*------------------------------------------------------------------------------------------------------------*/
+
+a {
+    text-decoration: none;
+    color: #fff;
+    transition: 0.4s;
+}
+
+.button__book {
     background-color: #52E1B6;
     border: none;
     border-radius: 0.5rem;
@@ -45,12 +68,17 @@ h2 {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.book__button:hover {
-    background-color: #005a3f;
+.button__book:hover {
+    background-color: #000;
     color: #fff;
 }
 
+/*------------------------------------------------------------------------------------------------------------*/
+/* SITEWIDE */
+/*------------------------------------------------------------------------------------------------------------*/
+
 .wrapper {
+    background-color: #111;
     max-width: 100%;
     display: grid;
     grid-template-columns: 100%;
@@ -61,19 +89,55 @@ h2 {
     "footer";
 }
 
-/*------------------------------------------------------------------------------------------------------------*/
+/* HEADER MOBILE */
+.header__mobile {
+    grid-area: header;
+    display: flex;
+    justify-content: flex-end;
+    position: sticky;
+    top: 0;
+    background-color: #111;
+    opacity: 90%;
+    height: 3rem;
+    z-index: 100;
+}
+
+.fa-bars {
+    cursor: pointer;
+    color: #fff;
+    margin: 1rem;
+}
+
+.nav__mobile {
+    position: relative;
+    display: inline-block;
+}
+  
+.nav__dropdown {
+    display: none;
+    position: absolute;
+    background-color: #111;
+    min-width: 10rem;
+    z-index: 1;
+    right: 0;
+}
+
+.nav__dropdown a {
+    padding: 12px 16px;
+    display: block;
+}
+  
+.nav__mobile:hover .nav__dropdown {
+    display: block;
+}
+
+
 /* DESKTOP HEADER */
-/*------------------------------------------------------------------------------------------------------------*/
 .header__desktop {
     display: none;
 }
 
-.nav__desktop { 
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
+/* HEADER MOB & DESKTOP NAV ELEMENTS */
 .nav__link {
     text-decoration: none;
     color: #fff;
@@ -92,80 +156,17 @@ h2 {
 }
 
 .nav__link--active:hover { 
-    color: #ffffff;
-}
-
-.nav__desktop__logo  {
-    height: 3.8rem;
-    margin: 0.8rem auto 0.8rem 2rem;
+    color: #fff;
 }
 
 
-/*------------------------------------------------------------------------------------------------------------*/
-/* HEADER & NAV MOBILE */
-/*------------------------------------------------------------------------------------------------------------*/
-.header__mobile {
-    grid-area: header;
-    display: flex;
-    justify-content: flex-end;
-    margin: 2.5rem 2rem 1rem 0;
-}
-
-.nav__mobile__bars {
-    cursor: pointer;
-    width: 1.5rem;
-}
-
-/* The container <nav> - needed to position the dropdown content */
-.nav__mobile {
-    position: relative;
-    display: inline-block;
-}
-  
-/* Dropdown Content */
-.nav__mobile__dropdown {
-    display: none;
-    position: absolute;
-    background-color: #dddddd;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px #00000033;
-    z-index: 1;
-    right: 0;
-}
-
-.nav__mobile__dropdown a {
-    color: #333;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-  
-.nav__mobile__dropdown a:hover {
-    background-color: #fff;
-}
-/* Show the dropdown menu on hover */
-.nav__mobile:hover .nav__mobile__dropdown {
-    display: block;
-}
-
-
-
-
-
-
-
-/*------------------------------------------------------------------------------------------------------------*/
 /* MAIN */
-/*------------------------------------------------------------------------------------------------------------*/
 main {
     grid-area: main;
+    background-color: #000;
 }
 
-/*------------------------------------------------------------------------------------------------------------*/
-/* SECTIONS */
-/*------------------------------------------------------------------------------------------------------------*/
-/* SECTIONS GENERAL STYLE */
-section {
+.main__header {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -175,104 +176,13 @@ section {
     background-position: center;
 }
 
-.section__text {
-    width: 70%;
-    text-align: center;
-    color: #fff;
-    font-size: 1.1rem;
-    text-shadow: 2px 2px 8px #111;
-}
-
-/* INDEX: SECTION INTRO */
-.section__intro {
-    background-image: url("../img/photos/09-night_3.jpg");
-    margin-top: -5.5rem;
-    height: 100vh; /* will this fuck shit? */
-}
-
-/* INDEX: SECTION ECO */
-.section__eco {
-    background-image: url("../img/photos/woods-2.jpg");
-    opacity: 93%;
-    height: 100vh;
-}
-
-/* INDEX: SECTION SUSTAINABILITY */
-.section__sustainability {
-    background-image: url("../img/photos/eco-living_2.jpg");
-    opacity: 93%;
-    height: 100vh;
-}
-
-/* ABOUT: SECTION ABOUT */
-.section__about {
-    background-image: url("../img/photos/mountains-2.jpg");
-    margin-top: -5.5rem;
-    height: 100vh;
-}
-
-/* ABOUT: SECTION ROOMS */
-.section__rooms {
-    background-color: #111;
-    color: #fff;
-    display: grid;
-    grid-template-columns: 100%;
-}
-
-/*OFFERSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS */
-.offers__sample {
-    background-image: url("../img/photos/woods-2.jpg");
-    height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.offers__textbox {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.section__rooms {
-    width: 100%;
-}
-
-.section__rooms > img {
-    width: 100%;
-}
-
-.rooms__textbox {
-    background-color: #111;
-    color: #fff;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.rooms__textbox__text {
-    width: 50%;
-    text-align: center;
-}
-
-/* SECTION: BOOKING */ /*remova flex or do new idk */
-.section__booking {
-    background-image: url("../img/photos/mountains-2.jpg");
-    margin-top: -5.5rem;
-    height: 100vh;
-}
-
-/*------------------------------------------------------------------------------------------------------------*/
 /* FOOTER */
-/*------------------------------------------------------------------------------------------------------------*/
 .footer {
     grid-area: footer;
     background-color: #111;
     color: #fff;
-    height: 45rem;
+    line-height: 1.5rem;
+    height: 50rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -283,71 +193,305 @@ section {
     margin: 1rem;
 }
 
-.footer__links {
+.footer__items {
     display: flex;
     flex-direction: column;
-    width: 12rem;
     margin: 1rem;
+    width: 149px;
 }
 
-.footer__links > a {
-    text-decoration: none;
-    color: #fff;
-    line-height: 1.7rem;
+.footer__list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
-.footer__contact {
-    display: flex;
-    flex-direction: column;
-    width: 12rem;
-    margin: 1rem;
-}
-
-.footer__contact > p {
-    margin: 0.4rem 0;
-}
-
-
-.footer__contact--method,
-.footer__links--headline {
+.footer__link:hover {
     color: #52E1B6;
-    font-weight: 600;
-    margin: 0.5rem 0;
 }
 
-.footer__socials {
-    background-color: #222;
+.button__socials {
+    margin: 0.1rem;
+    font-size: 1.8rem;
+}
+
+.button__socials:hover {
+    color: #52E1B6;
+}
+
+.button__newsletter {
+    background-color: transparent;
+    margin-top: 0.6rem;
+    border: 1px solid #fff;
+    border-radius: 0.5rem;
+    padding: 0.6rem;
+    cursor: pointer;
+    color: #fff;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    transition: 0.4s;
+}
+
+.button__newsletter:hover {
+    color: #52E1B6;
+    border: 1px solid #52E1B6;
+}
+
+/*------------------------------------------------------------------------------------------------------------*/
+/* INDEX.HTML */
+/*------------------------------------------------------------------------------------------------------------*/
+
+/* HERO HEADER */
+.hero__header {
+    background-image: url("../img/photos/09-night_3.jpg");
+    margin-top: -5.5rem;
+    height: 70vh;
+}
+
+.hero__heading {
+    color: #52E1B6;
+}
+
+/* ECO SECTION */
+.eco__section {
+    background-image: url("../img/photos/woods-2.jpg");
+    height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 3.5rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
-.footer__socials > a {
+.eco__text {
+    width: 70%;
+    text-align: center;
+    color: #fff;
+    font-size: 1.1rem;
+    text-shadow: 2px 2px 8px #111;
+}
+
+/*------------------------------------------------------------------------------------------------------------*/
+/* ABOUT.HTML */
+/*------------------------------------------------------------------------------------------------------------*/
+
+/* ABOUT HEADER */
+.about__header {
+    background-image: url("../img/photos/night-5-b.jpg");
+    margin-top: -5.5rem;
+    display: none;
+}
+
+/* ABOUT SECTION */
+.about__section {
+    color: #fff;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 100%;
+}
+
+.about__section > img {
+    width: 100%;
+}
+
+.about__textbox {
+    background-color: #111;
+    color: #fff;
+    width: 100%;
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.about__text {
+    width: 50%;
+    text-align: center;
+}
+
+/*------------------------------------------------------------------------------------------------------------*/
+/* BOOKING.HTML */
+/*------------------------------------------------------------------------------------------------------------*/
+
+/* BOOKING HEADER*/
+.booking__header {
+    background-image: url("../img/photos/night-8-c.jpg");
+    margin-top: -5.5rem;
+    display: none;
+}
+
+/* BOOKING SECTION */
+.booking__section {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-auto-rows: auto;
+    grid-template-areas:
+    "search-bar"
+    "cards";
+}
+
+/* BOOKING SEARCH */
+.booking__search {
+    background-color: #111;
+    color: #fff;
+    padding: 1.5rem;
+    width: 100%;
+    grid-area: search-bar;
+}
+
+.search__options {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+aside {
+    display: flex;
+    flex-direction: column;
     margin: 0.5rem;
+    width: 100%
+}
+
+input, select {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.3rem;
+}
+
+label {
+    margin-bottom: 0.2rem;
+}
+
+.button__book--search {
+    margin-top: 0.7rem;
+}
+
+/* CARDS CONTAINER */
+.cards__container {
+    background-color: #fff;
+    border-radius: 0 0 0.5rem 0.5rem;
+    grid-area: cards;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    max-width: 20rem;
+    margin: 2rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+.card__img {
+    width: 100%;
+}
+
+.card__header {
+    text-align: center;
+    background-color: #222;
+    color: #fff;
+    margin: 0.8rem 0.8rem -1rem 0.8rem;
+    padding: 0.2rem;
+}
+
+.card__textbox {
+    padding: 0.8rem;
+}
+
+.card__price {
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: #000;
+    text-align: center;
+}
+
+.button__book--card {
+    width: 100%;
 }
 
 /*------------------------------------------------------------------------------------------------------------*/
 /* MEDIA QUERIES */
 /*------------------------------------------------------------------------------------------------------------*/
 
+/* TABLET */
 @media screen and (min-width: 768px) {
+
+    /* GENERAL STYLES */
+    h1 {
+        font-size: 5rem;
+    }
+
+    /* SITEWIDE */
     .footer {
         flex-direction: row;
-        justify-content: space-around;
         align-items: flex-start;
-        height: 22rem;
+        justify-content: space-between;
+        height: 20rem;
         padding-top: 3rem;
+        max-width: 768px;
+        margin: 0 auto;
     }
 
     .footer__icon {
         width: 10rem;
     }
+
+    /* INDEX.HTML & BOOKING.HTML HEADER */
+    .booking__header, 
+    .hero__header {
+        display: block;
+        height: 100vh;
+        display: flex;
+    }
+
+    /* ABOUT.HTML */
+    .about__textbox {
+        height: 20rem;
+    }
+
+    /* BOOKING.HTML */
+    .booking__section {
+        flex-direction: row;
+        align-items: flex-start;
+        transform: translateY(-400px);
+        margin-bottom: -25rem;
+    }
+
+    .booking__search {
+        border-radius: 0.5rem 0.5rem 0 0;
+    }
+
+    .search__options {
+        flex-direction: row;
+        align-items: flex-end;
+    }
+
+    aside {
+        margin: 0 1rem;
+    }
 }
 
-
+/* DESKTOP */
 @media screen and (min-width: 1000px) {
 
+    /* GENERAL STYLES */
+    h2 {
+        font-size: 2.8rem;
+    }
+
+    /* SITEWIDE */
     .wrapper {
         display: grid;
         grid-template-columns: repeat(6, 1fr);
@@ -358,19 +502,6 @@ section {
         "footer footer footer footer footer footer";
     }
 
-    h1 {
-        font-size: 5rem;
-    }
-
-    h2 {
-        font-size: 2.8rem;
-    }
-
-    .section__text {
-        font-size: 1.5rem;
-        width: 50%;
-    }
-
     .header__mobile {
         display: none;
     }
@@ -378,14 +509,68 @@ section {
     .header__desktop {
         grid-area: header;
         display: block;
-        background-color: #111;
+        position: sticky;
+        top: 0;
+        background-color: #000;
         opacity: 70%;
         height: 5.5rem;
+        z-index: 100;
     }
-   
-    .section__rooms {
+
+    .nav__desktop { 
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    
+    .nav__logo  {
+        height: 3.8rem;
+        margin: 0.8rem auto 0.8rem 2rem;
+    }
+
+    main {
+        grid-area: main;
+    }
+
+    .footer {
+        grid-area: footer;
+        max-width: 1000px;
+    }
+
+    /* INDEX.HTML */
+    .eco__text {
+        font-size: 1.5rem;
+        width: 50%;
+    }
+
+    /* ABOUT & BOOKING HEADER */
+    .about__header,
+    .booking__header {
+        display: block;
+        height: 100vh;
+    }
+
+    /* ABOUT.HTML */
+    .about__section {
+        border-radius: 0.5rem;
+        overflow: hidden;
+        transform: translateY(-400px);
+        margin-bottom: -20rem;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about__textbox {
+        height: auto;
+    }
+
+    .about__text {
+        width: 75%;
+    }
+
+    /* BOOKING.HTML */
+    .cards__container {
+        margin-bottom: 3rem;
     }
     
 }
