@@ -242,7 +242,7 @@ main {
 
 /* HERO HEADER */
 .hero__header {
-    background-image: url("../img/photos/09-night_3.jpg");
+    background-image: url("../img/photos/09-night.jpg");
     margin-top: -5.5rem;
     height: 70vh;
 }
@@ -253,7 +253,7 @@ main {
 
 /* ECO SECTION */
 .eco__section {
-    background-image: url("../img/photos/woods-2.jpg");
+    background-image: url("../img/photos/woods-3.jpg");
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -376,7 +376,7 @@ label {
 
 /* CARDS CONTAINER */
 .cards__container {
-    background-color: #fff;
+    background-color: #d1d1d1;
     border-radius: 0 0 0.5rem 0.5rem;
     grid-area: cards;
     display: flex;
@@ -385,6 +385,7 @@ label {
 }
 
 .card {
+    background-color: #fff;
     display: flex;
     flex-direction: column;
     max-width: 20rem;
